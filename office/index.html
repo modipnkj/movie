@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Movie Details</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css" >
+        <script src="https://unpkg.com/vue"></script>
+           
+    </head>
+    <body> 
+        <div id="vueapp">
+            <h1>{{movie1}}</h1>
+            <img  class="imge" v-on:click="show=!show" v-bind:src="imageLink1"/>
+            <transition name="bounce">
+                <p class="ms" v-if="show">"Harry Potter and Dumbledore's warning about the return of Lord Voldemort is not heeded
+                        by the wizard authorities who, in turn, look to undermine Dumbledore's authority at Hogwarts and
+                        discredit Harry."</p>
+            </transition><hr><break></break>
+            <h1>{{movie2}}</h1>
+            <img class="imge" v-on:click="show2=!show2" v-bind:src="imageLink2"/>
+            <transition name="bounce">
+                <p class="ms" v-if="show2">"A young hobbit, Frodo, who has found the One Ring that belongs to the Dark Lord
+                        Sauron, begins his journey with eight companions to Mount Doom, the only place where it can be
+                        destroyed."</p>
+            </transition><hr>
+            <h1>{{movie3}}</h1>
+            <img class="imge" v-on:click="show3=!show3" v-bind:src="imageLink3"/>
+            <transition name="bounce">
+                <p class="ms" v-if="show3">"Adrift in space with no food or water, Tony Stark sends a message to Pepper Potts as his
+                        oxygen supply starts to dwindle. Meanwhile, the remaining Avengers -- Thor, Black Widow, Captain
+                        America and Bruce Banner -- must figure out a way to bring back their vanquished allies for an epic
+                        showdown with Thanos -- the evil demigod who decimated the planet and the universe."</p>
+            </transition><hr>
+            
+        </div>
+        <div id="upload">
+                <button id="btnu" v-on:click="su = !su">
+                        add more movies
+                </button></br>
+                <transition name="popups">
+                        <input class="txtt" v-if="su" v-model="message" placeholder="enter movie name">
+                        <p v-if="su">Message is: {{ message }}</p>
+                </transition></br>
+                <transition name="#">
+                        <textarea class="txtt" v-if="su" v-model="mess" placeholder="enter movie summary"></textarea>
+                </transition>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        
+        <script src="app.js"></script>    
+    </body>
+</html>
